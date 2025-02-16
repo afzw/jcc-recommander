@@ -1,0 +1,156 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* .scrape-heroes {
+  display: flex;
+  margin-left: auto;
+} */
+
+.lineup-list {
+  width: 100%;
+  padding: 1em;
+}
+
+.lineup-list .item {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lineup-list .title-wrapper {
+  margin: 0 0 8px 0;
+  padding: 1em 0 0.5em;
+  display: flex;
+}
+
+.lineup-list .title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.lineup-list .delete-lineup-btn {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.lineup-list .description-wrapper {
+  display: flex;
+  padding: 0.5em 0 1em;
+  margin: 0 0 12px 0;
+}
+
+.lineup-list .description {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.lineup-list .text-edit {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.lineup-list .hero-list-wrapper {
+  display: flex;
+  padding: 0.5em 0 1em;
+  margin: 0 0 12px 0;
+  height: 3em;
+  align-items: center;
+}
+
+.lineup-list .editing-hero-list {
+  display: flex;
+  gap: 1em;
+}
+
+.lineup-list .hero-list {
+  display: flex;
+  gap: 1em;
+}
+
+.lineup-list .hero {
+  width: 3em;
+  height: 3em;
+}
+
+.lineup-list .editing-hero-list .remove-btn {
+  font-size: 16px;
+  position: absolute;
+  color: red;
+  background-color: white;
+  cursor: pointer;
+}
+
+.lineup-list .add-hero-btn {
+  width: 3em;
+  height: 3em;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lineup-list .save-edit-btn {
+  margin-left: 1em;
+}
+
+.add-lineup-btn {
+  margin-top: 1em;
+  border-radius: 5em;
+  position: absolute;
+  right: 5em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .lineup-list .item {
+    padding: 12px;
+  }
+
+  .lineup-list .hero {
+    width: 32px;
+    height: 32px;
+  }
+}
