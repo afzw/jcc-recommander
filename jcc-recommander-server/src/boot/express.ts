@@ -11,6 +11,9 @@ import { config } from '@/config/config'
  * @param app 初始的express程序
  */
 function initExpress(app: express.Express) {
+  /** 跨域资源共享 */
+  app.use(cors())
+
   app.set('x-powered-by', false)
 
   /** 配置express静态资源目录 */
@@ -21,8 +24,6 @@ function initExpress(app: express.Express) {
   app.use(morgan(':date :method :url -- [:status] :response-time ms'))
   /** response压缩 */
   app.use(compression())
-  /** 跨域资源共享 */
-  app.use(cors())
   // 解析 application/x-www-form-urlencoded
   app.use(express.urlencoded({ extended: true }))
   // 解析 application/json

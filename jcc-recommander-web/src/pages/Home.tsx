@@ -21,7 +21,7 @@ export default function Home() {
       console.error('Failed to load heroes:', getHeroErr)
       return
     }
-    if (heroRes) setHeroes(heroRes.data)
+    if (heroRes) setHeroes(heroRes.data || [])
     setHeroLoading(false)
   }
 
@@ -31,7 +31,7 @@ export default function Home() {
       console.error('Failed to load lineups:', getLineupErr)
       return
     }
-    if (lineupRes) setLineups(lineupRes.data)
+    if (lineupRes && lineupRes.data) setLineups(lineupRes?.data)
     setLineupLoading(false)
   }
 
@@ -42,7 +42,6 @@ export default function Home() {
       console.error('Failed to scrape heroes:', scrapeErr)
       return
     }
-    console.log('1111')
     loadHeroes()
     setHeroLoading(false)
   }

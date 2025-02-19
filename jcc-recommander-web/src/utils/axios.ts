@@ -1,10 +1,8 @@
 import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
-const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'
-
 const requester: AxiosInstance = axios.create({
-  baseURL,
-  timeout: 10000,
+  baseURL: '/api',
+  timeout: 20000,
   headers: {
     'Content-Type': 'application/json',
   },

@@ -14,6 +14,7 @@ function initConfig(config: Config) {
   config.publicDir = path.resolve(rootDir, process.env.PUBLIC_DIR || 'public')
   config.uploadDir = path.resolve(rootDir, process.env.UPLOAD_DIR || 'uploads')
   config.scriptDir = path.resolve(rootDir, process.env.SCRIPT_DIR || 'scripts')
+  config.mongoUri = process.env.MONGO_URI || 'mongodb://root:root@localhost:27017/jcc-recommander?authSource=admin'
 }
 
 export { initConfig }

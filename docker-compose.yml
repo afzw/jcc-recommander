@@ -1,0 +1,41 @@
+services:
+  frontend:
+    image: web:local
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_BASE_URL=http://backend:9000
+    networks:
+      - app_network
+
+  backend:
+    image: afzw/jcc-recommander-backend:latest-universal
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/jcc-recommander
+    networks:
+      - app_network
+
+  mongodb:
+    image: mongo:7.0.4
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  mongo_data:
+    driver: local

@@ -5,6 +5,7 @@ type Config = {
   publicDir: string
   uploadDir: string
   scriptDir: string
+  mongoUri: string
 }
 
 const config: Config = {
@@ -14,6 +15,7 @@ const config: Config = {
   publicDir: '',
   uploadDir: '',
   scriptDir: '',
+  mongoUri: '',
 }
 
 export { config, Config }
